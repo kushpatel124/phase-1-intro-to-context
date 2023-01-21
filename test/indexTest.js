@@ -1,4 +1,4 @@
-require ( './helpers.js' );
+require('./helpers.js');
 
 describe("The payroll system", function () {
   describe("populates a record from an Array", function () {
@@ -63,7 +63,7 @@ describe("The payroll system", function () {
         expect(employeeRecords.map(nameExtractor)).to.eql(["moe", "bartholomew"]);
       })
 
-      it("creates more than 2 records", function() {
+      it("creates more than 2 records", function () {
         let dataEmployees = [
           ["Thor", "Odinsson", "Electrical Engineer", 45],
           ["Loki", "Laufeysson-Odinsson", "HR Representative", 35],
@@ -296,7 +296,7 @@ describe("The payroll system", function () {
       describe("from several imported CSV structures", function () {
         let employeeRecords
 
-        describe("calculatePayroll", function() {
+        describe("calculatePayroll", function () {
           it("exists", function () {
             expect(calculatePayroll).to.exist
           })
@@ -312,11 +312,11 @@ describe("The payroll system", function () {
                 return rec.firstName === row[0]
               })
 
-              timesInRecordRow[1].forEach(function(timeInStamp){
+              timesInRecordRow[1].forEach(function (timeInStamp) {
                 createTimeInEvent(rec, timeInStamp)
               })
 
-              timesOutRecordRow[1].forEach(function(timeOutStamp){
+              timesOutRecordRow[1].forEach(function (timeOutStamp) {
                 createTimeOutEvent(rec, timeOutStamp)
               })
             })
